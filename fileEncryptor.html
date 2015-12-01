@@ -1,0 +1,30 @@
+<html lang = "en">
+    <head>
+        <title>File Encrypt/Decrypt Using AES</title>
+        <script src ="AES.js"></script>
+        <script src ="AESCounterMode.js"></script>
+        <script src ="FileController.js"></script>
+        <script src ="jquery-1.11.3.min.js"></script>
+
+    </head>
+    <body>
+        <form class="local-files">
+            <fieldset>
+                <label>Password</label>
+                <input type="text" name="password-file" id="password-file" value="MyPassWord123">
+            </fieldset>
+            <fieldset style="float:left;"><legend>Encrypt file</legend>
+                <label>Source file</label>
+                <input type="file" name="src-file" id="src-file" onchange="encryptFile(this.files[0])">
+                <output class="small grey" id="encrypt-file-time"></output>
+                <p>Source file will be encrypted and downloaded with '.encrypted' suffix.</p>
+            </fieldset>
+            <fieldset><legend>Decrypt file</legend>
+                <label>Encrypted file</label>
+                <input type="file" name="enc-file" id="enc-file" onchange="decryptFile(this.files[0])">
+                <output class="small grey" id="decrypt-file-time"></output>
+                <p>Encrypted file will be decrypted and downloaded with '.decrypted' suffix.</p>
+            </fieldset>
+        </form>
+    </body>
+</html>
